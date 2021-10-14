@@ -31,7 +31,13 @@ function getProfile(username) {
     });
 }
 
-const users = ['chalkers', 'alenaholligan'];
+console.log(process.argv);
+const users = process.argv.slice(2);
+
+
+
+
+// const users = ['chalkers', 'alenaholligan', 'davemcfarland'];
 
 // users.forEach( username => {
 //     getProfile(username);
