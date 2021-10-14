@@ -31,5 +31,8 @@ function getProfile(username) {
     });
 }
 
-getProfile('chalkers');
-getProfile('alenaholligan');
+const users = ['chalkers', 'alenaholligan'];
+
+users.forEach( username => {
+    getProfile(username);
+});
