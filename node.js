@@ -33,6 +33,10 @@ function getProfile(username) {
 
 const users = ['chalkers', 'alenaholligan'];
 
-users.forEach( username => {
-    getProfile(username);
-});
+// users.forEach( username => {
+//     getProfile(username);
+// });
+
+// simple forEach because getProfile need 1 parameter 
+
+users.forEach(getProfile);
