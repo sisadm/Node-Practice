@@ -22,21 +22,27 @@ function getProfile(username) {
     try {
         // connect to the API URL(https://teamtreehouse.com/${username}.json) 
         const request = https.get(`https://teamtreehouse.com/${username}.json`, response => {
-            let body = '';
-            // Read the data
-            response.on('data', data => {
-                body += data.toString();
-            })
+            if(response.statusCode === 200) {
+                let body = '';
+                // Read the data
+                response.on('data', data => {
+                    body += data.toString();
+                })
 
-            response.on('end', () => {
-                try {
-                    //Parse the data
-                    const profile = JSON.parse(body);
-                    printMessage(username, profile.badges.length, profile.points.JavaScript);  
-                } catch(error) {
-                    printError(error);
-                }
-            });
+                response.on('end', () => {
+                    try {
+                        //Parse the data
+                        const profile = JSON.parse(body);
+                        printMessage(username, profile.badges.length, profile.points.JavaScript);  
+                    } catch(error) {
+                        printError(error);
+                    }
+                });
+            } else {
+                const message = `There was an error getting the profile for ${username} (${response.statusCode})`;
+                const statusCodeError = new Error(message);
+                printError(statusCodeError);
+            }
         });
         // Error handle
         request.on('error', printError);
