@@ -11,7 +11,7 @@ function startingMsg() {
     let convertTo = prompt('Please use three-letter currency code: ');
     
     if(/(.*[a-z]){3}/i.test(convertTo)) {
-        getExchange(convertTo);
+        getExchange(convertTo, num);
     } else {
         console.error('Please use only letters!');
     }
@@ -20,7 +20,7 @@ function startingMsg() {
 
 
 
-function getExchange(currencyCode) {
+function getExchange(currencyCode, number) {
     const request = http.get('http://api.exchangeratesapi.io/v1/latest?access_key=7195c5da9b3d875607f73a4e06068b51', response => {
         let body = '';
         currencyCode = currencyCode.toUpperCase();
@@ -30,10 +30,13 @@ function getExchange(currencyCode) {
 
         response.on('end', () => {
             const exch = JSON.parse(body); 
-            console.log(`exch.rates.${currencyCode}`);
-            return console.log(exch.rates[currencyCode]);
+            result(number, exch.rates[currencyCode], currencyCode)
         })
     });
+}
+
+function result(number, currencyValue, currencyCode) {
+    console.log(`Your ${number}EUR is worth ${Number(number * currencyValue)}${currencyCode}`);
 }
 
 startingMsg();
