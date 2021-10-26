@@ -30,6 +30,7 @@ function getExchange(currencyCode, number) {
 
         response.on('end', () => {
             const exch = JSON.parse(body); 
+            console.log(exch.rates);
             result(number, exch.rates[currencyCode], currencyCode)
         })
     });
