@@ -6,7 +6,7 @@ app.set('view engine', 'pug');
 
 // adding root route for request from user
 app.get('/', (req, res)=> {
-    res.send('<h1>Hello World!</h1>');
+    res.render('index');
 });
 
 
