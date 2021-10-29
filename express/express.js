@@ -2,6 +2,7 @@ const express = require ('express');
 
 const app = express();
 
+app.set('view engine', 'pug');
 
 // adding root route for request from user
 app.get('/', (req, res)=> {
