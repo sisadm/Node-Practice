@@ -10,8 +10,8 @@ app.get('/', (req, res)=> {
 });
 
 
-app.get('/hello', (req, res)=> {
-    res.send('<h1>Hello From the Otherside!</h1>');
+app.get('/cards', (req, res)=> {
+    res.render('card');
 });
 
 app.listen(3000, () => {
