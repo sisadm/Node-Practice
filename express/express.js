@@ -11,7 +11,7 @@ app.get('/', (req, res)=> {
 
 
 app.get('/cards', (req, res)=> {
-    res.render('car');
+    res.render('card');
 });
 
 app.listen(3000, () => {
