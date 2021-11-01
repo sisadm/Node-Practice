@@ -11,8 +11,7 @@ app.get('/', (req, res)=> {
 
 
 app.get('/cards', (req, res)=> {
-    res.locals.prompt = 'Who is buried in Grants tomb?';
-    res.render('card');
+    res.render('card', { prompt: 'Who is buried in Grants tomb?', hint: `Think about who's tomb`});
 });
 
 app.listen(3000, () => {
