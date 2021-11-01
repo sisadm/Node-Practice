@@ -2,6 +2,15 @@ const express = require ('express');
 
 const app = express();
 
+const colors = [
+    'red',
+    'orange',
+    'yellow',
+    'green',
+    'blue',
+    'purple'
+  ];
+
 app.set('view engine', 'pug');
 
 // adding root route for request from user
@@ -11,7 +20,7 @@ app.get('/', (req, res)=> {
 
 
 app.get('/cards', (req, res)=> {
-    res.render('card', { prompt: 'Who is buried in Grants tomb?', hint: `Think about who's tomb`});
+    res.render('card', { prompt: 'Who is buried in Grants tomb?', colors});
 });
 
 app.listen(3000, () => {
