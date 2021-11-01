@@ -11,7 +11,7 @@ app.get('/', (req, res)=> {
 
 
 app.get('/cards', (req, res)=> {
-    res.render('card');
+    res.render('card', { prompt: 'Who is buried in Grants tomb?'});
 });
 
 app.listen(3000, () => {
