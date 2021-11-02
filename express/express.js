@@ -1,6 +1,8 @@
-const express = require ('express');
+const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
+
 
 const colors = [
     'red',
@@ -11,6 +13,7 @@ const colors = [
     'purple'
   ];
 
+app.use(bodyParser.urlencoded({ extended: false}));
 app.set('view engine', 'pug');
 
 // adding root route for request from user
@@ -27,6 +30,7 @@ app.get('/hello', (req, res)=> {
 })
 
 app.post('/hello', (req, res)=> {
+    console.dir(req.body)
     res.render('hello');
 })
 
