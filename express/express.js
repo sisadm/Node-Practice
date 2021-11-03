@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cookieParse = require('cookie-parse');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
@@ -15,6 +15,8 @@ const colors = [
   ];
 
 app.use(bodyParser.urlencoded({ extended: false}));
+app.use(cookieParser());
+
 app.set('view engine', 'pug');
 
 // adding root route for request from user
@@ -27,7 +29,7 @@ app.get('/cards', (req, res)=> {
 });
 
 app.get('/hello', (req, res)=> {
-    res.render('hello');
+    res.render('hello', {name: req.cookies.username});
 })
 
 app.post('/hello', (req, res)=> {
