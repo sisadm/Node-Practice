@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const e = require('express');
 
 const app = express();
 
@@ -22,7 +23,12 @@ app.set('view engine', 'pug');
 // adding root route for request from user
 app.get('/', (req, res)=> {
     const name = req.cookies.username
-    res.render('index', {name});
+    if(name != null || undefined) {
+        res.render('index', {name});
+    } else {
+        res.redirect('/hello');
+    }
+    
 });
 
 app.get('/cards', (req, res)=> {
