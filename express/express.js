@@ -23,7 +23,7 @@ app.set('view engine', 'pug');
 // adding root route for request from user
 app.get('/', (req, res)=> {
     const name = req.cookies.username
-    if(name != null || undefined) {
+    if(name) {
         res.render('index', {name});
     } else {
         res.redirect('/hello');
