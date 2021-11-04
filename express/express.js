@@ -21,7 +21,8 @@ app.set('view engine', 'pug');
 
 // adding root route for request from user
 app.get('/', (req, res)=> {
-    res.render('index');
+    const name = req.cookies.username
+    res.render('index', {name});
 });
 
 app.get('/cards', (req, res)=> {
@@ -29,7 +30,7 @@ app.get('/cards', (req, res)=> {
 });
 
 app.get('/hello', (req, res)=> {
-    res.render('hello', {name: req.cookies.username});
+    res.render('hello');
 })
 
 app.post('/hello', (req, res)=> {
