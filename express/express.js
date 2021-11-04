@@ -30,7 +30,7 @@ app.get('/', (req, res)=> {
     }
 });
 
-app.post('/', (req, res) => {
+app.post('/goodbye', (req, res) => {
     res.clearCookie('username');
     res.redirect('/hello');
 })
