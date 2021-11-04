@@ -28,8 +28,12 @@ app.get('/', (req, res)=> {
     } else {
         res.redirect('/hello');
     }
-    
 });
+
+app.post('/', (req, res) => {
+    res.clearCookie('username');
+    res.redirect('/hello');
+})
 
 app.get('/cards', (req, res)=> {
     res.render('card', { prompt: 'Who is buried in Grants tomb?', colors});
