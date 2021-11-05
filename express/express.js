@@ -22,10 +22,14 @@ app.set('view engine', 'pug');
 
 
 app.use((req, res, next) => {
-    console.log('One');
+    req.message = 'This is a message';
     next();
 });
 
+app.use((req, res, next) => {
+    console.log(req.message)
+    next();
+})
 
 
 
