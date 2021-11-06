@@ -27,6 +27,7 @@ app.use(cookieParser());
 app.set('view engine', 'pug');
 
 
+// middleware
 app.use((req, res, next) => {
     console.log('Hello');
     const err = new Error('Oh noes!');
@@ -53,6 +54,13 @@ app.get('/', (req, res)=> {
 app.post('/goodbye', (req, res) => {
     res.clearCookie('username');
     res.redirect('/hello');
+})
+
+// error middleware handler (need 4 parameters)
+
+app.use((err, req, res, next) => {
+    res.locals.error = err;
+    res,render('error');
 })
 
 app.get('/cards', (req, res)=> {
