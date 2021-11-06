@@ -29,7 +29,8 @@ app.set('view engine', 'pug');
 
 app.use((req, res, next) => {
     console.log('Hello');
-    next();
+    const err = new Error('Oh noes!');
+    next(err);
 });
 
 app.use((req, res, next) => {
@@ -55,7 +56,7 @@ app.post('/goodbye', (req, res) => {
 })
 
 app.get('/cards', (req, res)=> {
-    res.render('card', { prompt: 'Who is buried in Grants tomb?', colors});
+    res.render('card', { prompt: 'Who is buried in Grants tomb?'});
 });
 
 app.get('/hello', (req, res)=> {
