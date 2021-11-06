@@ -75,6 +75,12 @@ app.post('/goodbye', (req, res) => {
     res.redirect('/hello');
 });
 
+app.use((req, res, next) => {
+    const err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+});
+
 // error middleware handler (need 4 parameters)
 
 app.use((err, req, res, next) => {
