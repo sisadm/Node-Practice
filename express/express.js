@@ -31,6 +31,7 @@ app.set('view engine', 'pug');
 app.use((req, res, next) => {
     console.log('Hello');
     const err = new Error('Oh noes!');
+    err.status = 500;
     next(err);
 });
 
@@ -51,18 +52,6 @@ app.get('/', (req, res)=> {
     }
 });
 
-app.post('/goodbye', (req, res) => {
-    res.clearCookie('username');
-    res.redirect('/hello');
-})
-
-// error middleware handler (need 4 parameters)
-
-app.use((err, req, res, next) => {
-    res.locals.error = err;
-    res,render('error');
-})
-
 app.get('/cards', (req, res)=> {
     res.render('card', { prompt: 'Who is buried in Grants tomb?'});
 });
@@ -74,16 +63,26 @@ app.get('/hello', (req, res)=> {
     } else {
         res.render('hello');
     }
-    
-
 })
 
 app.post('/hello', (req, res)=> {
     res.cookie('username', req.body.username);
-    res.redirect('/');
-    
+    res.redirect('/');    
 })
 
-app.listen(3001, () => {
+app.post('/goodbye', (req, res) => {
+    res.clearCookie('username');
+    res.redirect('/hello');
+});
+
+// error middleware handler (need 4 parameters)
+
+app.use((err, req, res, next) => {
+    res.locals.error = err;
+    res.status(err.status);
+    res.render('error');
+});
+
+app.listen(3000, () => {
     console.log('the application is running on localhost:3000')
 });
