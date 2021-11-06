@@ -3,6 +3,12 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const e = require('express');
 
+// ES6
+// import express from 'express';
+// import { urlencoded } from 'body-parser';
+// import cookieParser from 'cookie-parser';
+// import e from 'express';
+
 const app = express();
 
 
@@ -22,12 +28,12 @@ app.set('view engine', 'pug');
 
 
 app.use((req, res, next) => {
-    req.message = 'This is a message';
+    console.log('Hello');
     next();
 });
 
 app.use((req, res, next) => {
-    console.log(req.message)
+    console.log('world');
     next();
 })
 
