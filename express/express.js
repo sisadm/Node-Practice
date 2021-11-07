@@ -16,6 +16,10 @@ app.use(cookieParser());
 
 app.set('view engine', 'pug');
 
+const routes = require('./routes/index');
+
+app.use(routes);
+
 
 // middleware
 // app.use((req, res, next) => {
