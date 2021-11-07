@@ -11,16 +11,6 @@ const e = require('express');
 
 const app = express();
 
-
-const colors = [
-    'red',
-    'orange',
-    'yellow',
-    'green',
-    'blue',
-    'purple'
-  ];
-
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cookieParser());
 
@@ -28,17 +18,17 @@ app.set('view engine', 'pug');
 
 
 // middleware
-app.use((req, res, next) => {
-    console.log('Hello');
-    const err = new Error('Oh noes!');
-    err.status = 500;
-    next(err);
-});
+// app.use((req, res, next) => {
+//     console.log('Hello');
+//     const err = new Error('Oh noes!');
+//     err.status = 500;
+//     next(err);
+// });
 
-app.use((req, res, next) => {
-    console.log('world');
-    next();
-})
+// app.use((req, res, next) => {
+//     console.log('world');
+//     next();
+// })
 
 
 app.use((req, res, next) => {
