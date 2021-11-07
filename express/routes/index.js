@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // adding root route for request from user
-app.get('/', (req, res)=> {
+router.get('/', (req, res)=> {
     const name = req.cookies.username
     if(name) {
         res.render('index', {name});
@@ -11,11 +11,11 @@ app.get('/', (req, res)=> {
     }
 });
 
-app.get('/cards', (req, res)=> {
+router.get('/cards', (req, res)=> {
     res.render('card', { prompt: 'Who is buried in Grants tomb?'});
 });
 
-app.get('/hello', (req, res)=> {
+router.get('/hello', (req, res)=> {
     const name = req.cookies.username;    
     if(name) {
         res.redirect('/');
@@ -24,12 +24,13 @@ app.get('/hello', (req, res)=> {
     }
 })
 
-app.post('/hello', (req, res)=> {
+router.post('/hello', (req, res)=> {
     res.cookie('username', req.body.username);
     res.redirect('/');    
 })
 
-app.post('/goodbye', (req, res) => {
+router.post('/goodbye', (req, res) => {
     res.clearCookie('username');
     res.redirect('/hello');
 });
+
