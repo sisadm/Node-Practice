@@ -8,6 +8,6 @@ block content
         i Hint: #{hint}
     
     if hint 
-      a(href=`${link}`) Answer
+      a(href=`http://localhost:3000/cards/${number}?side=${link}`) Answer
     else 
-      a(href=`${link}`) Question 
+      a(href=`http://localhost:3000/cards/${number}?side=${link}`) Question 
