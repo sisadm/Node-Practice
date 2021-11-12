@@ -7,7 +7,7 @@ block content
       p
         i Hint: #{hint}
     
-    if hint 
-      a(href=`http://localhost:3000/cards/${number}?side=${link}`) Answer
+    if hint != ''
+      a(href=`http://localhost:3000/cards/${id}?side=${side}`) Answer
     else 
-      a(href=`http://localhost:3000/cards/${number}?side=${link}`) Question 
+      a(href=`http://localhost:3000/cards/${id}?side=${side}`) Question 
