@@ -16,11 +16,16 @@ app.use(cookieParser());
 
 app.set('view engine', 'pug');
 
+// require roots
+
 const mainRoutes = require('./routes/index');
 const cardRoutes = require('./routes/cards');
+const randomCardRoutes = require('./routes/randomCards');
+const { use } = require('./routes/cards');
 
 app.use(mainRoutes);
 app.use('/cards', cardRoutes);
+app/use('/cards/', randomCardRoutes);
 
 
 // middleware
