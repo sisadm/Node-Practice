@@ -12,7 +12,7 @@ router.get('/:id', (req, res) => {
     const text = cards[id][side];
     let { hint } = cards[id];
     const templateData = {text, hint, id, side};
-    console.log(templateData);
+    
     if(side == 'answer') { 
         templateData.side = 'question';
         templateData.hint = '';
