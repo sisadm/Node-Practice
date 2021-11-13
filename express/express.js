@@ -20,11 +20,10 @@ app.set('view engine', 'pug');
 
 const mainRoutes = require('./routes/index');
 const cardRoutes = require('./routes/cards');
-const randomCardRoutes = require('./routes/randomCards');
 
 app.use(mainRoutes);
 app.use('/cards', cardRoutes);
-app.use('/cards', randomCardRoutes);
+
 
 
 // middleware
