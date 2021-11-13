@@ -13,10 +13,12 @@ router.get('/:id', (req, res) => {
         templateData.side = 'question';
         templateData.hint = '';
         res.render('card', templateData);
-    } else {
+    } else if (side == 'question') {
         templateData.side = 'answer';
         res.render('card', templateData);
     }
+
+    res.render('card', templateData); 
     
     
 });
