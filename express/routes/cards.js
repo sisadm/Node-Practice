@@ -9,23 +9,27 @@ const { cards } = data;
 router.get('/', (req, res) => {
     const cardsLength = cards.length;
     let randomNumber = Math.floor(Math.random() * cardsLength);
-    res.redirect(`${randomNumber}?side=question`)
+    res.redirect(`/cards/${randomNumber}`)
 })
 
 
 
 
 router.get('/:id', (req, res) => {
-    let { side } = req.query;
-    let { id } = req.params;
-    let text = cards[id][side]; 
-    let { hint } = cards[id];
-    let templateData = {text, hint, id, side};
+    const { side } = req.query;
+    const { id } = req.params;
 
     // if only defined one number after cards/
     if(!side) {
         res.redirect(`${id}?side=question`);
     };
+
+    const name = req.cookies.username;
+    const text = cards[id][side]; 
+    const { hint } = cards[id];
+    const templateData = {text, hint, id, side, name};
+
+    
     
     if(side == 'answer') { 
         templateData.side = 'question';
