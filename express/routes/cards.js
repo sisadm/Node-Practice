@@ -21,7 +21,7 @@ router.get('/:id', (req, res) => {
 
     // if only defined one number after cards/
     if(!side) {
-        res.redirect(`${id}?side=question`);
+        return res.redirect(`${id}?side=question`);
     };
 
     const name = req.cookies.username;
