@@ -28,6 +28,8 @@ router.get('/hello', (req, res)=> {
 
 router.get('/cards/', (req, res) => {
     const cardsLength = cards.length;
+    let randomNumber = Math.floor(Math.random() * cardsLength);
+    res.redirect(`${randomNumber}?side=question`)
 })
 
 router.post('/hello', (req, res)=> {
