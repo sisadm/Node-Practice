@@ -4,7 +4,13 @@ const { data } = require('../data/flashcardData.json')
 const { cards } = data;
 
 
+// random cards path
 
+router.get('/', (req, res) => {
+    const cardsLength = cards.length;
+    let randomNumber = Math.floor(Math.random() * cardsLength);
+    res.redirect(`${randomNumber}?side=question`)
+})
 
 router.get('/:id', (req, res) => {
     const { side } = req.query;

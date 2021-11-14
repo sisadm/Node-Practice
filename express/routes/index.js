@@ -22,20 +22,12 @@ router.get('/hello', (req, res)=> {
     } else {
         res.render('hello');
     }
-})
-
-// random cards path
-
-router.get('/cards/', (req, res) => {
-    const cardsLength = cards.length;
-    let randomNumber = Math.floor(Math.random() * cardsLength);
-    res.redirect(`${randomNumber}?side=question`)
-})
+});
 
 router.post('/hello', (req, res)=> {
     res.cookie('username', req.body.username);
     res.redirect('/');    
-})
+});
 
 router.post('/goodbye', (req, res) => {
     res.clearCookie('username');
