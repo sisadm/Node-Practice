@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-// JSON
-const { data } = require('../data/flashcardData.json')
-const { cards } = data;
 
 // adding root route for request from user
 router.get('/', (req, res)=> {
