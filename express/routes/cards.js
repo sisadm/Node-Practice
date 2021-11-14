@@ -23,9 +23,8 @@ router.get('/:id', (req, res) => {
     let templateData = {text, hint, id, side};
 
     // if only defined one number after cards/
-    if(id >= 0 && side == undefined) {
-        side = 'question';
-        res.redirect(`${id}?side=${side}`);
+    if(!side) {
+        res.redirect(`${id}?side=question`);
     };
     
     if(side == 'answer') { 
