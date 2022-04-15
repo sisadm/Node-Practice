@@ -13,9 +13,15 @@ let arr1 = [357, 337, 344, 402, 376, 398, 304, 368, 656, 382, 310, 354, 387, 391
 
 
 function SumAndDivide(arr) {
+
+    // log out the random array
     console.log(`Our array is:${arr}`);
+
+    // sort from smallest to largest and log it out with 500 ms later
     arr.sort((a,b) => a-b);
     setTimeout( ()=> console.log(`Sorting array from smallest to largest: ${arr}`), 500);
+
+    // using for loop summarizing the numbers from array to a variable and divide the length of array to get median 
     let arr1Sum = 0;
     for(let item of arr ) {
         arr1Sum = arr1Sum + Number(item);
