@@ -13,15 +13,15 @@ console.log(arr1Correct);
 
 
 
-// function SumAndDivide(arr) {
-//     let arr1Sum = 0;
-//     for(let item of arr ) {
-//         arr1Sum = arr1Sum + Number(item);
-//     }
-//     console.log(arr1Sum);
-//     return arr1Sum /= 20;
-// };
+function SumAndDivide(arr) {
+    let arr1Sum = 0;
+    for(let item of arr ) {
+        arr1Sum = arr1Sum + Number(item);
+    }
+    console.log(arr1Sum);
+    return arr1Sum /= arr.length;
+};
 
-// //console.log(`no value variable : ${arr1Sum}`);
+//console.log(`no value variable : ${arr1Sum}`);
 
-// console.log(SumAndDivide(arr1Correct));
+console.log(SumAndDivide(arr1Correct));
