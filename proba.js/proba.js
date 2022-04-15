@@ -33,7 +33,7 @@ Sorting array from smallest to largest:
 
     arr1Median = arr1Sum / arr.length;
 
-    setTimeout ( ()=> console.log(`Summarize the array numbers: ${arr1Median}`), 2500);
+    setTimeout ( ()=> console.log(`Median the array numbers: ${arr1Median}`), 2500);
 
 };
 
