@@ -25,3 +25,5 @@ function SumAndDivide(arr) {
 //console.log(`no value variable : ${arr1Sum}`);
 
 console.log(SumAndDivide(arr1Correct));
+
+a
