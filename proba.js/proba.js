@@ -15,7 +15,7 @@ let arr1 = [357, 337, 344, 402, 376, 398, 304, 368, 656, 382, 310, 354, 387, 391
 function SumAndDivide(arr) {
     console.log(`Our array is:${arr}`);
     arr.sort((a,b) => a-b);
-    console.log(`Sorting array from smallest to largest: ${arr}`)
+    setTimeout( ()=> console.log(`Sorting array from smallest to largest: ${arr}`), 500);
     let arr1Sum = 0;
     for(let item of arr ) {
         arr1Sum = arr1Sum + Number(item);
