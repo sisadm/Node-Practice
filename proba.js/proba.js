@@ -17,7 +17,7 @@ function SumAndDivide(arr) {
     // log out the random array
     console.log(`Our array is:\n[${arr}]`);
 
-    // sort from smallest to largest and log it out with 500 ms later
+    // sort from smallest to largest and log it 
     arr.sort((a,b) => a-b);
     SetTime('Sorting array from smallest to largest', arr, 1000);
     
@@ -25,15 +25,27 @@ function SumAndDivide(arr) {
     // using for loop summarizing the numbers from array to a variable and divide the length of array to get median 
     let arr1Sum = 0;
     let arr1Median;
+    
     for(let item of arr ) {
         arr1Sum = arr1Sum + Number(item);
     }
+
     SetTime('Summarize the array numbers', arr1Sum, 2000);
+
+
 //    setTimeout ( ()=> console.log(`Summarize the array numbers: ${arr1Sum}`), 1700);
+    arr1Median = (arr) => {
+        if(arr.length % 2 === 0) { // when array lenght is even
+            console.log((arr[arr.length / 2], arr[(arr.length / 2) - 1]))
+            return (arr[arr.length / 2] + arr[(arr.length / 2) - 1]) / 2;
+        } 
+        else {
+            return (arr[arr.length - 1] / 2);
+        };
+    };
 
-    arr1Median = arr1Sum / arr.length;
-
-    setTimeout ( ()=> console.log(`Median the array numbers: ${arr1Median}`), 2500);
+    SetTime('Median for the array', arr1Median(arr1), 3000);
+    
 
 };
 
