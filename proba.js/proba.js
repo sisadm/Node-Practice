@@ -48,6 +48,8 @@ function SumAndDivide(arr) {
 
 
 
+
+// call SumAndDivide function and pass arr1 
 SumAndDivide(arr1);
 
 
