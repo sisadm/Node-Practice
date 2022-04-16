@@ -26,17 +26,16 @@ function SumAndDivide(arr) {
     let arr1Sum = 0;
     let arr1Median;
     
+    //console.log(`no value variable : ${arr1Sum}`);
     for(let item of arr ) {
         arr1Sum = arr1Sum + Number(item);
     }
-
     SetTime('Summarize the array numbers', arr1Sum, 2000);
 
 
 //    setTimeout ( ()=> console.log(`Summarize the array numbers: ${arr1Sum}`), 1700);
     arr1Median = (arr) => {
         if(arr.length % 2 === 0) { // when array lenght is even
-            console.log((arr[arr.length / 2], arr[(arr.length / 2) - 1]))
             return (arr[arr.length / 2] + arr[(arr.length / 2) - 1]) / 2;
         } 
         else {
@@ -45,11 +44,9 @@ function SumAndDivide(arr) {
     };
 
     SetTime('Median for the array', arr1Median(arr1), 3000);
-    
-
 };
 
-//console.log(`no value variable : ${arr1Sum}`);
+
 
 SumAndDivide(arr1);
 
