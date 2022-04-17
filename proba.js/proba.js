@@ -1,7 +1,7 @@
 // let arr1 = [357, 337, 344, 402, 376, 398, 304, 368, 656, 382, 310, 354, 387, 391, 366, 376, 316, 349, 392, 386, 222];
 
 
- let arr1 = [1, 2, 3, 4, 5];
+ let arr1 = [5, 2, 3, 4, 6, 1];
 
 
 // let arr1Correct = [357, 337, 344, 402, 376, 398, 304, 368, 356, 382, 310, 354, 387, 391, 366, 376, 316, 349, 392, 386];
@@ -27,19 +27,19 @@ function SumAndDivide(arr) {
     SetTime('Sorting array from smallest to largest', arr, 1000);
     
 
-    // using for loop summarizing the numbers from array to a variable and divide the length of array to get median 
+    // variables
     let arr1Sum = 0;
     let arr1Median;
     let arrQ1;
     
-    //console.log(`no value variable : ${arr1Sum}`);
+    // using for loop summarizing the numbers from array to a variable and divide the length of array to get median 
     for(let item of arr ) {
         arr1Sum = arr1Sum + Number(item);
     }
     SetTime('Summarize the array numbers', arr1Sum, 2000);
 
 
-//    setTimeout ( ()=> console.log(`Summarize the array numbers: ${arr1Sum}`), 1700);
+    // Median for array
     arr1Median = (arr) => {
         if(arr.length % 2 === 0) { // when array lenght is even
             return (arr[arr.length / 2] + arr[(arr.length / 2) - 1]) / 2;
@@ -50,9 +50,18 @@ function SumAndDivide(arr) {
     };
 
     SetTime('Median for the array', arr1Median(arr1), 3000);
+
+    // lower Quarter 
+    arrQ1 = (arr) => {
+        if(arr.length % 2 === 0) {
+            return (arr[(arr.length / 2 -1)]);
+        }
+    };
+
+    SetTime('Lower Quarter is:', arrQ1(arr1), 3500);
 };
 
-// lower Quarter 
+
 
 
 
