@@ -1,7 +1,7 @@
 // let arr1 = [357, 337, 344, 402, 376, 398, 304, 368, 656, 382, 310, 354, 387, 391, 366, 376, 316, 349, 392, 386, 222];
 
 
- let arr1 = [5, 2, 3, 7, 4, 6, 1];
+ let arr1 = [5, 12, 133, 7, 4, 6, 1];
 
 
 // let arr1Correct = [357, 337, 344, 402, 376, 398, 304, 368, 356, 382, 310, 354, 387, 391, 366, 376, 316, 349, 392, 386];
@@ -54,7 +54,7 @@ function SumAndDivide(arr) {
     // lower Quarter 
     arrQ1 = (arr) => {
         if((arr.length / 4) % 1 !== 0) {
-            return console.log(true);
+            return (arr[ (Math.floor(arr.length / 4) + (Math.ceil(arr.length / 4 ) - 1 )  ) / 2]);
         } 
         else {
             return arr[ (arr.length / 4) ];
