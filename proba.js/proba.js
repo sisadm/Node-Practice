@@ -65,6 +65,7 @@ function SumAndDivide(arr) {
 
     SetTime('Lower Quarter is:', arrQ1(arr1), 3500);
 
+    // Upper Quarter
     arrQ3 = (arr) => {
         if((arr.length / 4) % 1 !== 0) {
             return (arr[ (Math.floor((arr.length * 3 )/ 4) + (Math.ceil((arr.length  * 3) / 4 ) - 1 )   ) / 2]);
@@ -74,7 +75,7 @@ function SumAndDivide(arr) {
         }
     }
 
-    SetTime('Higer Quaerter is:', arrQ3(arr1), 3700)
+    SetTime('Upper Quaerter is:', arrQ3(arr1), 3700)
 };
 
 
