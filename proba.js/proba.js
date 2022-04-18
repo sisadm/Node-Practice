@@ -31,6 +31,7 @@ function SumAndDivide(arr) {
     let arr1Sum = 0;
     let arr1Median;
     let arrQ1;
+    let arrQ3;
     
     // using for loop summarizing the numbers from array to a variable and divide the length of array to get median 
     for(let item of arr ) {
@@ -63,6 +64,17 @@ function SumAndDivide(arr) {
     };
 
     SetTime('Lower Quarter is:', arrQ1(arr1), 3500);
+
+    arrQ3 = (arr) => {
+        if((arr.length / 4) % 1 !== 0) {
+            return (arr[ (Math.floor((arr.length * 3 )/ 4) + (Math.ceil((arr.length  * 3) / 4 ) - 1 )   ) / 2]);
+        } 
+        else {
+            return arr[ ( (arr.length * 3) / 4) ];
+        }
+    }
+
+    SetTime('Higer Quaerter is:', arrQ3(arr1), 3700)
 };
 
 
