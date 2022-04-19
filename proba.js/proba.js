@@ -76,13 +76,14 @@ function SumAndDivide(arr) {
         }
     }
 
+    SetTime('Upper Quaerter is:', arrQ3(arr1), 3700);
+
     // interquartile  ( upper quarter - lower quarter)
 
-    interquartile= () => {
-        return arrQ3 - arrQ1;
-    }
- 
-    SetTime('Upper Quaerter is:', arrQ3(arr1), 3700)
+    interquartile = ( arrQ3(arr1) - arrQ1(arr1) );
+    
+    SetTime('Interquartile is', interquartile, 3900);
+    
 };
 
 
