@@ -54,12 +54,14 @@ function SumAndDivide(arr) {
     SetTime('Median for the array', arr1Median(arr1), 3000);
 
     // lower Quarter 
-    arrQ1 = (arr) => {
+    function lowerQ (arr) {
         if((arr.length / 4) % 1 !== 0) {
-            return (arr[ (Math.floor(arr.length / 4) + (Math.ceil(arr.length / 4 ) - 1 )  ) / 2]);
+            arrQ1 = (arr[ (Math.floor(arr.length / 4) + (Math.ceil(arr.length / 4 ) - 1 )  ) / 2]);
+            return arrQ1;
         } 
         else {
-            return arr[ (arr.length / 4) ];
+            arrQ1 = arr[ (arr.length / 4) ];
+            return arrQ1;
         }
         
     };
