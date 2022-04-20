@@ -66,7 +66,9 @@ function SumAndDivide(arr) {
         
     };
 
-    SetTime('Lower Quarter is:', arrQ1(arr1), 3500);
+    lowerQ(arr1);
+
+    SetTime('Lower Quarter is:', arrQ1, 3500);
 
     // Upper Quarter
     arrQ3 = (arr) => {
@@ -82,7 +84,7 @@ function SumAndDivide(arr) {
 
     // interquartile  ( upper quarter - lower quarter)
 
-    interquartile = ( arrQ3(arr1) - arrQ1(arr1) );
+    interquartile = ( arrQ3(arr1) - arrQ1 );
     
     SetTime('Interquartile is', interquartile, 3900);
     
