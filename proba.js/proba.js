@@ -63,9 +63,8 @@ function SumAndDivide(arr) {
             arrQ1 = arr[ (arr.length / 4) ];
             return arrQ1;
         }
-        
     };
-
+    // function call
     lowerQ(arr1);
 
     SetTime('Lower Quarter is:', arrQ1, 3500);
