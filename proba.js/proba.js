@@ -70,16 +70,20 @@ function SumAndDivide(arr) {
     SetTime('Lower Quarter is:', arrQ1, 3500);
 
     // Upper Quarter
-    arrQ3 = (arr) => {
+    function upperQ (arr) {
         if((arr.length / 4) % 1 !== 0) {
-            return (arr[ (Math.floor((arr.length * 3 )/ 4) + (Math.ceil((arr.length  * 3) / 4 ) - 1 )   ) / 2]);
+            arrQ3 = (arr[ (Math.floor((arr.length * 3 )/ 4) + (Math.ceil((arr.length  * 3) / 4 ) - 1 )   ) / 2]);
+            return arrQ3;
         }
         else {
-            return arr[ ( (arr.length * 3) / 4) ];
+            arrQ3 = arr[ ( (arr.length * 3) / 4) ];
+            return arrQ3;
         }
-    }
+    };
 
-    SetTime('Upper Quaerter is:', arrQ3(arr1), 3700);
+    upperQ(arr1);
+
+    SetTime('Upper Quaerter is:', arrQ3, 3700);
 
     // interquartile  ( upper quarter - lower quarter)
 
