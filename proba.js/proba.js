@@ -11,9 +11,9 @@
 
 // let arr2 = [325, 335, 310, 354, 318, 337, 328, 335, 337, 355, 318, 339, 347, 351, 335, 348, 325, 332, 354, 344];
 
-
-function NumberPush(number) {
-    arr1.push(number);
+// random number generator 
+function randomNumber() {
+    return Math.floor(Math.random() * 100) + 1;
 }
 
 
