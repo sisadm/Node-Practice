@@ -21,7 +21,7 @@ function randomArrayLong(y) {
     return Math.floor(Math.random() * y ) + 1;
 }
 
-
+// for loop to push random numbers into an array
 for(let i = 0; i < randomArrayLong(15); i++) {
     arr1.push(randomNumber(100));
 };
