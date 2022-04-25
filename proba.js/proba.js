@@ -91,7 +91,7 @@ function SumAndDivide(arr) {
             return arrQ3;
         }
     };
-
+    // function call
     upperQ(arr1);
 
     SetTime('Upper Quaerter is:', arrQ3, 3700);
