@@ -57,8 +57,11 @@ function SumAndDivide(arr) {
         if(arr.length % 2 === 0) {
             arrMedian = (arr[arr.length / 2] + arr[(arr.length / 2) - 1]) / 2;
             return arrMedian;
+        } else {
+            arrMedian = (arr[(arr.length - 1) / 2]);
+            return arrMedian; 
         }
-    }
+    };
 
     arr1Median = (arr) => {
         if(arr.length % 2 === 0) { // when array lenght is even
