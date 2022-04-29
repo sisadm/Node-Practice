@@ -40,7 +40,7 @@ function SumAndDivide(arr) {
 
     // variables
     let arr1Sum = 0;
-    let arr1Median;
+    let arrMedian;
     let arrQ1;
     let arrQ3;
     let interquartile;
@@ -69,7 +69,9 @@ function SumAndDivide(arr) {
         };
     };
 
-    SetTime('Median for the array', arr1Median(arr1), 3000);
+    Median(arr1);
+
+    SetTime('Median for the array', arrMedian, 3000);
 
     // lower Quarter 
     function lowerQ (arr) {
