@@ -63,15 +63,6 @@ function SumAndDivide(arr) {
         }
     };
 
-    arr1Median = (arr) => {
-        if(arr.length % 2 === 0) { // when array lenght is even
-            return (arr[arr.length / 2] + arr[(arr.length / 2) - 1]) / 2;
-        } 
-        else {
-            return (arr[(arr.length - 1) / 2]);
-        };
-    };
-
     Median(arr1);
 
     SetTime('Median for the array', arrMedian, 3000);
