@@ -3,4 +3,11 @@ const readline = require('readline').createInterface({
     output: process.stdout
 });
 
-readline.questionNum1('Please enter Horizontal line: ')
+const firstCoordinates= [];
+const secondCoordinates= [];
+
+readline.question('Please enter Horizontal coordinates:', x => {
+    firstCoordinates.push(x);
+    readline.close();
+} );
+
