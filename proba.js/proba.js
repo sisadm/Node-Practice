@@ -34,7 +34,8 @@ function SumAndDivide(arr) {
     console.log(`Our array is:\n[${arr}]`);
 
     // sort from smallest to largest and log it 
-    arr.sort((a,b) => a-b);
+     arr.sort((a,b) => a-b);
+    //arr.sort((a,b) => console.log( a - b));
     SetTime('Sorting array from smallest to largest', arr, 1000);
     
 
