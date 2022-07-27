@@ -44,7 +44,7 @@ function SumAndDivide(arr) {
     let arrMedian;
     let arrQ1;
     let arrQ3;
-    let interquartile;
+    let interquartile
     
     // using for loop summarizing the numbers from array to a variable and divide the length of array to get median 
     for(let item of arr ) {
