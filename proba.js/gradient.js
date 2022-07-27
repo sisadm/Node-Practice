@@ -9,6 +9,7 @@ const secondCoordinates= [];
 readline.question('Please enter Horizontal coordinates:', x => {
     firstCoordinates.push(x);
     console.log(firstCoordinates);
+    
     readline.question('Please enter Horizontal coordinates:', y => {
         firstCoordinates.push(y);
         console.log(firstCoordinates);
